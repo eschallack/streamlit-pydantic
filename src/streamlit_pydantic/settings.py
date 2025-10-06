@@ -3,7 +3,7 @@ from typing import Any, Dict, Tuple, Type
 import streamlit as st
 from pydantic.fields import FieldInfo
 from pydantic_settings import (
-    BaseSettings,
+    SettingsConfigDict, BaseSettings,
     PydanticBaseSettingsSource,
 )
 
@@ -36,10 +36,7 @@ class _StreamlitSettingsSource(PydanticBaseSettingsSource):
 
 
 class StreamlitSettings(BaseSettings):
-    class Config:
-        """Default for streamlit settings class."""
-
-        extra = "ignore"
+    model_config = SettingsConfigDict(extra="ignore")
 
     @classmethod
     def settings_customise_sources(

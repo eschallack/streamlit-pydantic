@@ -80,17 +80,17 @@ class ExampleModel(BaseModel):
     int_list: List[Annotated[int, Gt(2)]] = Field(
         ...,
         description="List of int values",
-        max_items=4,
-        min_items=2,
+        max_length=4,
+        min_length=2,
     )
     color_list: List[Color] = Field(
         ...,
         description="List of color values",
-        min_items=2,
+        min_length=2,
     )
     object_list: List[OtherData] = Field(
         ...,
-        max_items=5,
+        max_length=5,
         description="A list of objects embedded into this model.",
     )
     object_dict: Dict[str, OtherData] = Field(

@@ -77,7 +77,7 @@ class ShowcaseModel(BaseModel):
         description="Another object embedded into this model.",
     )
     string_list: List[str] = Field(
-        ..., max_items=20, description="List of string values"
+        ..., max_length=20, description="List of string values"
     )
     int_list: List[int] = Field(..., description="List of int values")
     string_dict: Dict[str, str] = Field(

@@ -3,9 +3,9 @@ from typing import Dict, List, Set
 
 import streamlit as st
 from pydantic import BaseModel, Field
-from pydantic.color import Color
 
 import streamlit_pydantic as sp
+from pydantic_extra_types.color import Color
 
 
 class OtherData(BaseModel):
